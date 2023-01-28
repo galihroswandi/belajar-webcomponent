@@ -47,3 +47,24 @@ class Author extends HTMLElement {
 }
 
 customElements.define('my-author', Author);
+
+
+// Contoh studi kasus
+class ProdutItem extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <div class='product-item'>
+                <img src='${this.getAttribute('image')}' alt='${this.getAttribute('name')}' />
+                <div class='desc'>
+                    <h2>${this.getAttribute('name')}</h2>
+                    <p>Price: ${this.getAttribute('price')}</p>
+                    <p>${this.getAttribute('description')}</p>
+                </div>
+                <button class='add-cart'>Add to cart</button>
+            </div>
+        `;
+    }
+}
+
+
+customElements.define('product-item', ProdutItem);
