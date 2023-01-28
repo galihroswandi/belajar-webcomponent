@@ -63,6 +63,12 @@ class ProdutItem extends HTMLElement {
                 <button class='add-cart'>Add to cart</button>
             </div>
         `;
+
+        this.querySelector('.add-cart').addEventListener('click', () => {
+            setTimeout(() => {
+                alert('Produte Telah ditambahkan ke keranjang ✔')
+            }, 1000);
+        })
     }
 }
 

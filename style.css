@@ -54,15 +54,16 @@ my-author p {
   margin-right: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
   padding-inline: 1rem;
   border-radius: 9999px;
   border: none;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   background-color: #3b82f6;
   color: #f1f5f9;
+  width: 70%;
 }
 
 .product-item > button.add-cart:hover {
