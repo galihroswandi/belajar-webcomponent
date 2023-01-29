@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates</title>
+</head>
+
+<body>
+    <template id="my-template1">
+        <style>
+            .container {
+                background-color: slategray;
+                padding: 16px;
+                color: #fff;
+                border-radius: 5rem;
+                margin-top: 5rem;
+            }
+        </style>
+        <div class="container">
+            <slot></slot>
+        </div>
+    </template>
+
+    <my-element>
+        Ini adalah isi dari element custom
+    </my-element>
+    <style>
+        my-element>.card {
+            max-width: 15rem;
+            max-height: 18rem;
+            overflow: hidden;
+        }
+    </style>
+    <my-element>
+        <div class="card">
+            <div class="card-header">
+                <img src="./img/1.jpg" alt="Seblak">
+                <h1>Product1</h1>
+                <p>$1</p>
+            </div>
+            <div class="card-footer">
+                <button>Add Cart</button>
+            </div>
+        </div>
+    </my-element>
+    <my-element>
+        Ini adalah isi dari element custom
+    </my-element>
+    <my-element>
+        Ini adalah isi dari element custom
+    </my-element>
+    <my-element>
+        Ini adalah isi dari element custom
+    </my-element>
+    <script src="./htmlTemplate.js"></script>
+</body>
+
+</html>

@@ -11,39 +11,47 @@
 
 <body>
 
-    <!-- <my-author></my-author>
-
-    <div class="card">
-        <div class="card-header">
-            <h1>My Card</h1>
+    <!-- <template id="my-template">
+        <style>
+            /* styles untuk element kita */
+            .my-element {
+                background-color: lightblue;
+                padding: 10px;
+                border-radius: 5px;
+            }
+        </style>
+        <div class="my-element">
+            <slot></slot>
         </div>
-    </div> -->
+    </template>
+
+
+    <script>
+        class MyElement extends HTMLElement {
+            constructor() {
+                super();
+
+                // menentukan template untuk shadow DOM
+                const template = document.querySelector('#my-template');
+
+                // menentukan shadow root kita
+                const shadowRoot = this.attachShadow({ mode: 'open' });
+
+
+                // Menambahkan template ke shadow root kita
+                shadowRoot.appendChild(template.content.cloneNode(true));
+            }
+        }
+
+        customElements.define('my-element', MyElement);
+    </script>
+
+
+    <my-element>Hallo World !!</my-element> -->
 
     <my-element>
-        <button>Clik Me</button>
-    </my-element><br>
-    <my-element></my-element><br>
-    <my-element></my-element><br>
-    <my-element></my-element><br>
-    <my-element></my-element><br>
-    <my-element></my-element><br>
-    <my-element></my-element><br>
-    <my-element></my-element><br>
-
-
-
-    <!-- My Product -->
-    <div class="products">
-        <product-item name="Product 1" image="./img/1.jpg" price="$50"
-            description="This is a description of product 1"></product-item>
-        <product-item name="Product 2" image="./img/2.jpg" price="$100"
-            description="This is a description of product 2"></product-item>
-        <product-item name="Product 2" image="./img/3.jpg" price="$100"
-            description="This is a description of product 2"></product-item>
-        <product-item name="Product 2" image="./img/4.jpeg" price="$100"
-            description="This is a description of product 2"></product-item>
-    </div>
-
+        Ini adalah isi dari elemen custom
+    </my-element>
 
     <script src="script.js"></script>
 </body>
