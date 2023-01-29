@@ -1,12 +1,12 @@
 // Custom Element HTML
 
-class MyElement extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = 'Hello World';
-    }
-}
+// class MyElement extends HTMLElement {
+//     connectedCallback() {
+//         this.innerHTML = 'Hello World';
+//     }
+// }
 
-customElements.define('my-element', MyElement);
+// customElements.define('my-element', MyElement);
 
 
 class Author extends HTMLElement {
@@ -70,10 +70,44 @@ class ProdutItem extends HTMLElement {
             }, 500);
         })
     }
+
+    // disconnectedCallback => digunakan ketika element yang kita buat dihapus dari dom : ini akan meningkatkan performa website karena element yang kita masukan ke dalam disconnectedCallback tidak akan ikut dirender
+    disconnectedCallback() {
+        console.log('Element is removed from DOM.')
+    }
 }
 
 
 customElements.define('product-item', ProdutItem);
+const producItem = document.createElement('product-item');
+producItem.setAttribute('image', './img/1.jpg');
+document.body.appendChild(producItem);
+
+document.body.removeChild(producItem);
+
+
+
+// Contoh lain
+class MyELement extends HTMLElement {
+    connectedCallback() {
+        // Menambahkan event listener
+        this.addEventListener('click', this.onClik);
+    }
+
+    disconnectedCallback() {
+        // membersihkan event listener
+        this.removeEventListener('click', this.onClik);
+        console.log('Element is removed.')
+    }
+
+
+    // jadi setelah fungsi di ini di jalankan langsung memanggil disconnectCallback untuk menghapus event tersebut
+    onClik() {
+        alert('Element di klik');
+        this.disconnectedCallback();
+    }
+}
+customElements.define('my-element', MyELement);
 
 
 

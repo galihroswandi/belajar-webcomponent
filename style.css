@@ -29,6 +29,8 @@ my-author p {
 }
 
 .product-item {
+  min-height: 25rem;
+  min-width: 15rem;
   max-width: 15rem;
   max-height: 25rem;
   overflow: hidden;
