@@ -67,10 +67,45 @@ class ProdutItem extends HTMLElement {
         this.querySelector('.add-cart').addEventListener('click', () => {
             setTimeout(() => {
                 alert('Produte Telah ditambahkan ke keranjang ✔')
-            }, 1000);
+            }, 500);
         })
     }
 }
 
 
 customElements.define('product-item', ProdutItem);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Methode untuk custom element
+
+// 1. customElements.define() :> digunakan untuk meng - define sebuah custom element.
+
+// 2. constructor() :> digunakan untuk meng - instantiasi sebuah custom element.
+
+// 3. connectedCallback() :> digunakan untuk menjalankan kode setelah sebuah custom element di - attach ke DOM.
+
+// 4. disconnectedCallback() :> digunakan untuk menjalankan kode setelah sebuah custom element di - detach dari DOM.
+
+// 5. adoptedCallback() :> digunakan untuk menjalankan kode setelah sebuah custom element dipindahkan ke document lain.
+
+// 6. attributeChangedCallback() :> digunakan untuk menjalankan kode setelah sebuah atribut pada sebuah custom element diubah.
+
+// 7. static get observedAttributes() :> digunakan untuk mendefinisikan atribut apa saja yang akan di - observe oleh sebuah custom element.
+
+// 8. get[attributeName]() :> digunakan untuk mendapatkan nilai dari sebuah atribut pada sebuah custom element.
+
+// 9. set[attributeName](value): digunakan untuk mengatur nilai dari sebuah atribut pada sebuah custom element.
+
+// 10. attachShadow({ mode }): digunakan untuk menambahkan sebuah shadow DOM pada sebuah custom element.
