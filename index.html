@@ -5,55 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Copmponent</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Web Component Example</title>
+    <style>
+        h3 {
+            color: purple;
+        }
+    </style>
 </head>
 
 <body>
+    <h3>Hello World</h3>
 
-    <!-- <template id="my-template">
-        <style>
-            /* styles untuk element kita */
-            .my-element {
-                background-color: lightblue;
-                padding: 10px;
-                border-radius: 5px;
-            }
-        </style>
-        <div class="my-element">
-            <slot></slot>
-        </div>
-    </template>
+    <user-card name="Otong Surotong" avatar="https://randomuser.me/api/portraits/men/4.jpg">
+        <div slot="email">otong12@yahoo.com</div>
+        <div slot="phone">222-222-222</div>
+    </user-card>
+    <user-card name="Ucup Markucup" avatar="https://randomuser.me/api/portraits/women/2.jpg">
+        <div slot="email">ucup25@gmail.com</div>
+        <div slot="phone">888-888-999</div>
+    </user-card>
 
-
-    <script>
-        class MyElement extends HTMLElement {
-            constructor() {
-                super();
-
-                // menentukan template untuk shadow DOM
-                const template = document.querySelector('#my-template');
-
-                // menentukan shadow root kita
-                const shadowRoot = this.attachShadow({ mode: 'open' });
-
-
-                // Menambahkan template ke shadow root kita
-                shadowRoot.appendChild(template.content.cloneNode(true));
-            }
-        }
-
-        customElements.define('my-element', MyElement);
-    </script>
-
-
-    <my-element>Hallo World !!</my-element> -->
-
-    <my-element>
-        Ini adalah isi dari elemen custom
-    </my-element>
-
-    <script src="script.js"></script>
+    <script src="userCard.js"></script>
 </body>
 
 </html>

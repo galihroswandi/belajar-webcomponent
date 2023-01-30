@@ -1,0 +1,43 @@
+Web component => 
+
+    * Kumpulan API platform web yang memungkinkan kita membuat tag html khusus, dapat digunakan kembali, dan dienkapsulasi
+    untuk digunakan di halaman web dan aplikasi web
+
+    * komponen web tidak memerlukan pustaka kerangka kerja pihak ke-3 khusus apa pun, tetapi pasti dapat digunakan dengannya
+
+
+
+1. 3 blok bangunan utama
+    * Custom Element
+    * Shadow DOM
+    * HTML Templates    
+
+
+
+2. Custom Element
+    * Create custom HTML tags
+    * Create Custom Class
+    * Lifecycle method avaible
+
+    
+    1.1 Custom element lifecycle methods
+        * constructor(): dipanggil saat instance elemen dibuat atau ditingkatkan
+        * connectedCallback(): dipanggil setiap kali elemen dimasukkan ke dalam DOM
+        * disconnectedCallback(): dipanggil setiap kali elemen dihapus dari DOM
+        * attributeChangedCallback(attributeName, oldValue, newValue): dipanggil ketika atribut ditambahkan, dihapus, diperbarui, atau diganti
+
+
+
+3. Shadow DOM
+    * digunakan untuk komponen mandiri
+    * merangkum gaya dan markup
+    * Buat dengan element.attachShadow({mode: open})
+    * Membuat "shadowRoot" yang dapat kita rujuk dan berinteraksi dengannya
+
+
+
+4. HTML Templates
+    * Tentukan markup yang dienkapsulasi dari komponen web kita
+    * Tag template menyimpan markup di halaman
+    * Sertakan HTML dan CSS dalam template
+    * Gunakan slot untuk menambahkan teks Kustom
