@@ -119,3 +119,116 @@ class NavTemplate extends HTMLElement {
 }
 
 window.customElements.define('my-navbar', NavTemplate);
+
+
+const templateShadow = document.createElement('template');
+templateShadow.innerHTML = `
+    <style>
+
+        *, html, body{
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            background-color: #818cf8;
+            margin-bottom: 3.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            justify-content: center;
+            align-items: center;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 5rem;
+            padding-left: 5rem;
+        }
+
+        .brand{
+            margin-top: auto;
+            margin-bottom: auto;
+        }        
+
+        .container > .brand > h1{
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+
+        .container> .brand > p{
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        .nav-link{
+            grid-column-start: 3;
+        }
+
+        .nav-link>ul{
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            gap: 2;
+        }
+
+        .nav-link>ul>li{
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .nav-link>ul>li:hover, .nav-link>ul>li>a:hover{
+            color: #ccfbf1;
+            background-color: #3b82f6;
+            cursor: pointer;
+        }
+
+        .nav-link>ul>li>a{
+            padding-top: 0.25rem;
+            padding-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: #5eead4;
+        }
+    </style>
+
+    <header>
+        <div class="container">
+            <div class="brand">
+                <h1>
+                    Web Components
+                </h1>
+                <p>Studi kasus with tailwindcss</p>
+            </div>
+            <div class="nav-link">
+                <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+`;
+
+
+class MyNavShadow extends HTMLElement {
+    constructor() {
+        super();
+
+        // Initialize shadow dom
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(templateShadow.content.cloneNode(true));
+    }
+}
+
+window.customElements.define('my-nav-shadow', MyNavShadow);
